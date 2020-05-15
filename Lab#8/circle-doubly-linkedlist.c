@@ -336,7 +336,7 @@ int invertList(listNode* h)
 		prev = NULL; // cur,prev가 같은 곳을 가르키고 tail이 바로 뒤를 가리키며 따라온다.
 		tail = NULL; // 그리고 cur가 앞으로 가면, prev가 현재포인터의 link를 tail을 가르키게하고 tail을 따라오게 함
 		cur = h->rlink;
-		temp = h->rlink; //리스트의 가장 왼쪽 노드
+		temp = h->rlink;
 
 			while(cur != NULL && cur != h) // 리스트를 돌며 포인터를 뒤바꿈
 			{
