@@ -91,7 +91,7 @@ int main()
 				break;
 			}
 			case 'd': case 'D':
-			{	/*완전한 삭제로 해당 기능 실행 이후 다시 c기능 사용필요*/
+			{	/*완전한 삭제로 해당 기능 실행 이후 다시 c기능 사용필요.*/
 				destroyGraph(g);
 				free(g);
 				g = NULL; 
