@@ -427,11 +427,16 @@ void depthFS(Graph* temp, int V)
 		return ;
 	}
 	/*입력받은 값 가장 먼저 연산 시작*/
+	int i;
+	/*다른 정점을 기준으로 재탐색 할 경우를 위한 방문배열 사전 초기화.*/
+	for(i=0; i<MAX_VERTEX; i++)
+		visitmark_DFS[i] = FALSE;
+	
 	Vertex* ver;
 	top = NULL;
 	push(V);
 	visitmark_DFS[V] = TRUE;
-	printf(" %d ", V);
+	printf(" %d", V);
 	
 	while(top != NULL)
 	{	/*입력받은 위치의 간선부터 인접리스트를 순회하며 방문한 정점의 경우 건너뛰고,
@@ -443,7 +448,7 @@ void depthFS(Graph* temp, int V)
 			{ 
 				push(ver->num);
 				visitmark_DFS[ver->num] = TRUE;
-				printf(" %d ", ver->num);
+				printf(" %d", ver->num);
 				V = ver->num;
 				ver = temp->vlist[V].head->link; //
 			
@@ -472,6 +477,12 @@ void breadthFS(Graph* temp, int V)
 		printf("The vertex hasn't been initialized, use the funtion 'I' \n'");
 		return ;
 	}
+	
+	int i;
+	/*다른 정점을 기준으로 재탐색 할 경우를 위한 방문배열 사전 초기화.*/
+	for(i=0; i<MAX_VERTEX; i++)
+		visitmark_BFS[i] = FALSE;
+	
 	/*최초 입력받은 위치의 정점부터 순회 시작.*/
 	Vertex* ver;
 	FnR* Q;
