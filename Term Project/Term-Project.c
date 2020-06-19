@@ -209,7 +209,7 @@ void destroyGraph(Graph* temp)
 {
 	if(temp == NULL)
 	{	/*예외처리*/
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return ;
 	}
 	
@@ -241,7 +241,7 @@ int insertVertex(Graph* temp, int index)
 { 
 	if(temp == NULL)
 	{	/*예외처리*/
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return 1;
 	}
 	if(vflag[index] == TRUE)
@@ -268,7 +268,7 @@ int insertEdge(Graph* temp, int u, int v)
 {
 	if(temp == NULL)
 	{
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return 1;
 	}
 	if(u > 19 || u < 0)
@@ -327,7 +327,7 @@ int deleteVertex(Graph* temp, int index)
 {	
 	if(temp == NULL)
 	{
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return 1;
 	}
 	if(vflag[index] == FALSE)
@@ -371,7 +371,7 @@ int deleteEdge(Graph* temp, int u, int v)
 {
 	if(temp == NULL)
 	{
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return 1;
 	}
 	if(u > 19 || u < 0)
@@ -413,7 +413,7 @@ void depthFS(Graph* temp, int V)
 {
 	if(temp == NULL)
 	{
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return ;
 	}
 	if(V > 19 || V < 0)
@@ -423,7 +423,7 @@ void depthFS(Graph* temp, int V)
 	}
 	if(temp->vlist[V].head == NULL)
 	{	/*입력받은 그래프가 그래프만 초기화 되어있는상태의 처리*/
-		printf("The vertex hasn't been initialized, use the funtion 'I' \n'");
+		printf("The vertex hasn't been initialized, use the funtion 'I' \n");
 		return ;
 	}
 	/*입력받은 값 가장 먼저 연산 시작*/
@@ -464,7 +464,7 @@ void breadthFS(Graph* temp, int V)
 {
 	if(temp == NULL)
 	{
-		printf("The graph hasn't been initialized, use the funtion 'C' \n'");
+		printf("The graph hasn't been initialized, use the funtion 'C' \n");
 		return ;
 	}
 	if(V > 19 || V < 0)
@@ -474,7 +474,7 @@ void breadthFS(Graph* temp, int V)
 	}
 	if(temp->vlist[V].head == NULL)
 	{	/*입력받은 그래프가 그래프만 초기화 되어있는상태의 처리*/
-		printf("The vertex hasn't been initialized, use the funtion 'I' \n'");
+		printf("The vertex hasn't been initialized, use the funtion 'I' \n");
 		return ;
 	}
 	
@@ -524,7 +524,7 @@ void printGraph(Graph* temp)
 	printf("\n--------------------------------- [Instruction] ------------------------------------");
 	printf("\n--------- [none : no vertex] | [only Head : Vertex exist but, has no edge] ---------");
 	printf("\n------------------------------------------------------------------------------------");
-	printf("\n--------------- [Format] ----------> (Vertex : u, Vertex v) <---------------------");
+	printf("\n--------------- [Format] ------------> (Vertex : u, Vertex v) <---------------------");
 	printf("\n------------------------------------------------------------------------------------");
 	
 	for(i = 0; i < MAX_VERTEX; i++)
@@ -615,11 +615,8 @@ int pop()
 	int val;
 	stacknode* temp = top;
 	
-	if(top == NULL)
-	{
-		printf("stack is empty!\n");
-		return 0;
-	}
+	if(top == NULL)	return 0;
+	
 	else
 	{
 		val = temp->data;
